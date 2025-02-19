@@ -1,8 +1,10 @@
 console.log("Hello WOrld!");
 
-var userInputFirst;
-var userInputSecond;
-var operand;
+let userInputOne = [];
+let userInputTwo = [];
+let userOperator = "";
+
+const display = document.getElementsByClassName("display")[0];
 
 function operate(val1, val2, operator){
     switch (operator) {
@@ -35,7 +37,12 @@ function divide (val1, val2){
     return val1/val2;
 }
 
-console.log(operate(5,5,"+") + " Expect 10");  
-console.log(operate(2,9,"*") + " Expect 18");
-console.log(operate(10,5,"-") + " Expect 5");
-console.log(operate(10,5,"/") + " Expect 2");
+display.textContent = userInputOne + userOperator + userInputTwo;
+
+function checkNull(arr){
+    if (arr.length === 0){
+        console.log("Array is empty")
+    }
+}
+
+checkNull(userInputOne);
